@@ -83,30 +83,126 @@ public class DemoSession1 {
 //            System.out.println("Day ko phai la so nguyen to");
 //        }
 //        
-           int keyChoice ;
-           do{
-               System.out.println("Moi ban chon");
-               System.out.println("1, Them");
-               System.out.println("2, Xoa");
-               System.out.println("3, Tim kiem");
-               System.out.println("4, Thoat");
-               Scanner scanner = new Scanner(System.in);
-               keyChoice = scanner.nextInt();
-               switch(keyChoice){
-                   case 1:
-                       System.out.println("Them du lieu");
-                       break;
-                   case 2:
-                       System.out.println("Xoa du lieu");
-                       break;
-                   case 3:
-                       System.out.println("Tim kiem");
-                       break;
+//           int keyChoice ;
+//           do{
+//               System.out.println("Moi ban chon");
+//               System.out.println("1, Them");
+//               System.out.println("2, Xoa");
+//               System.out.println("3, Tim kiem");
+//               System.out.println("4, Thoat");
+//               Scanner scanner = new Scanner(System.in);
+//               keyChoice = scanner.nextInt();
+//               switch(keyChoice){
+//                   case 1:
+//                       System.out.println("Them du lieu");
+//                       break;
+//                   case 2:
+//                       System.out.println("Xoa du lieu");
+//                       break;
+//                   case 3:
+//                       System.out.println("Tim kiem");
+//                       break;
+//               }
+//               
+//           }while(keyChoice!=4);
+//           
+//           System.out.println("ABC");
+
+//       int mang[] = new int[4];
+//       mang[0]=0;
+//       mang[1]=1;
+//       mang[2]=3;
+//       mang[3]=4;
+//       
+//       for(int i=0;i<mang.length;i++){
+//           System.out.println(mang[i]);
+//       }
+//       
+//       for(int num: mang){
+//           System.out.println(num);
+//       }
+//       
+//       int mang2[]={10,20,30,40 };
+//       for(int j=0;j<mang2.length;j++){
+//           System.out.println(mang2[j]);
+//       }
+//       
+//       int[] mang3 = new int[4];
+//       mang3[0]=0;
+//       mang3[1]=1;
+//       mang3[2]=3;
+//       mang3[3]=4;
+//       
+//          
+//       for(int num: mang3){
+//           System.out.println(num);
+//       }
+//       
+//       
+//       int mangHaiChieu[][] = new int[2][2];
+//       mangHaiChieu[0][0]=10;
+//       mangHaiChieu[0][1]=20;
+//       mangHaiChieu[1][0]=30;
+//       mangHaiChieu[1][1]=40;
+//       
+//       for(int i =0; i<2;i++){
+//          for(int j = 0;j<2;j++){
+//              System.out.println(mangHaiChieu[i][j]);
+//          }
+//       }
+
+//         String fullName = "Nguyen Thanh Luan";
+//         System.out.println(fullName.charAt(0));
+//         System.out.println(fullName.indexOf("N"));
+//         System.out.println(fullName.equalsIgnoreCase("nguyen thanh luan"));
+//         System.out.println(fullName.replace("a", "o"));
+//         System.out.println(fullName.concat(" Ha Long"));
+//         System.out.println(fullName.startsWith("N"));
+//         System.out.println(fullName.endsWith("n"));
+
+//           StringBuilder stringBuilder = new StringBuilder("NIIT HA NOI");
+//           stringBuilder.reverse().append("abc");
+//           System.out.println(stringBuilder.toString());
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Nhap vao so pt cua mang");
+            int lengthArray = scanner.nextInt();
+            float arr[] = new float[lengthArray];
+            
+            for (int i = 0; i < lengthArray; i++) {
+               System.out.println("Nhap phan tu thu "+(i+1));
+               Scanner scanner1 = new Scanner(System.in);
+               arr[i]=scanner1.nextFloat();
+            }
+            
+            float max = arr[0];
+            
+            for (int i = 1; i < lengthArray; i++) {
+               if(max<arr[i]){
+                   max=arr[i];
                }
-               
-           }while(keyChoice!=4);
-           
-           System.out.println("ABC");
-        
+            }
+            
+            float min = arr[0];
+            
+            for (int i = 1; i < lengthArray; i++) {
+               if(min>arr[i]){
+                   min=arr[i];
+               }
+            }
+            
+            System.out.println("Max la"+ max);
+            System.out.println("Min la"+ min);
+            
+            float sum =0;
+            int count = 0;
+            for (int i = 1; i < lengthArray; i++) {
+               if(arr[i]%5==0){
+                  sum+=arr[i];
+                  count++;
+               }
+            }
+            
+            System.out.println("Trung binh cong cac so chia het cho 5 la "+(sum/count));
     }
 }
