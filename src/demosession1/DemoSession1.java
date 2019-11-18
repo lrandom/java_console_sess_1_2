@@ -164,45 +164,62 @@ public class DemoSession1 {
 //           stringBuilder.reverse().append("abc");
 //           System.out.println(stringBuilder.toString());
 
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Nhap vao so pt cua mang");
-            int lengthArray = scanner.nextInt();
-            float arr[] = new float[lengthArray];
-            
-            for (int i = 0; i < lengthArray; i++) {
-               System.out.println("Nhap phan tu thu "+(i+1));
-               Scanner scanner1 = new Scanner(System.in);
-               arr[i]=scanner1.nextFloat();
-            }
-            
-            float max = arr[0];
-            
-            for (int i = 1; i < lengthArray; i++) {
-               if(max<arr[i]){
-                   max=arr[i];
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Nhap vao so pt cua mang");
+//            int lengthArray = scanner.nextInt();
+//            float arr[] = new float[lengthArray];
+//            
+//            for (int i = 0; i < lengthArray; i++) {
+//               System.out.println("Nhap phan tu thu "+(i+1));
+//               Scanner scanner1 = new Scanner(System.in);
+//               arr[i]=scanner1.nextFloat();
+//            }
+//            
+//            float max = arr[0];
+//            
+//            for (int i = 1; i < lengthArray; i++) {
+//               if(max<arr[i]){
+//                   max=arr[i];
+//               }
+//            }
+//            
+//            float min = arr[0];
+//            
+//            for (int i = 1; i < lengthArray; i++) {
+//               if(min>arr[i]){
+//                   min=arr[i];
+//               }
+//            }
+//            
+//            System.out.println("Max la"+ max);
+//            System.out.println("Min la"+ min);
+//            
+//            float sum =0;
+//            int count = 0;
+//            for (int i = 1; i < lengthArray; i++) {
+//               if(arr[i]%5==0){
+//                  sum+=arr[i];
+//                  count++;
+//               }
+//            }
+//            
+//            System.out.println("Trung binh cong cac so chia het cho 5 la "+(sum/count));
+
+//Sắp xếp tăng dần
+        int mang[] = {0,1,5,3,2,4,5,6,8,10};
+        for(int i = 0; i < mang.length-1;i++){
+           for(int j =1; j<mang.length; j++){
+               if(mang[i] < mang[j]){
+                  int temp = mang[i];
+                  mang[i]=mang[j];
+                  mang[j]=temp;
                }
-            }
-            
-            float min = arr[0];
-            
-            for (int i = 1; i < lengthArray; i++) {
-               if(min>arr[i]){
-                   min=arr[i];
-               }
-            }
-            
-            System.out.println("Max la"+ max);
-            System.out.println("Min la"+ min);
-            
-            float sum =0;
-            int count = 0;
-            for (int i = 1; i < lengthArray; i++) {
-               if(arr[i]%5==0){
-                  sum+=arr[i];
-                  count++;
-               }
-            }
-            
-            System.out.println("Trung binh cong cac so chia het cho 5 la "+(sum/count));
+           }
+        }
+        
+        System.out.println("Mang sau khi săp xep");
+        for(int i = 0; i < mang.length-1;i++){
+            System.out.println(mang[i]);
+        }
     }
 }
