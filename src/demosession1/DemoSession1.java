@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demosession1; 
+package demosession1;
 
 import java.util.Scanner;
 import static javafx.application.Platform.exit;
@@ -12,7 +12,6 @@ import static javafx.application.Platform.exit;
  *
  * @author Lrandom
  */
-
 public class DemoSession1 {
 
     /**
@@ -43,21 +42,19 @@ public class DemoSession1 {
 //        
         //System.out.println("Gia tri cua num1 la "+num1+" "+num1+" "+num1);
         //System.out.printf("Gia tri cua num1 la %d %d %d", num1,num1,num1);
-        
+
 //        Scanner scanner = new Scanner(System.in);
 //        num = scanner.nextInt();
 //        System.out.println("Ban vua nhap vao"+num);
 //        
-     ///   System.out.printf("Dong 1");
-     //   System.out.printf("\nDong 2 \"aka\"");
-       /// for(num=1;num<=10;num++){
-   
-           //gfgh
-            //System.out.println(num);
-            //if(num==6){
-               // continue;
-            //}
-           
+        ///   System.out.printf("Dong 1");
+        //   System.out.printf("\nDong 2 \"aka\"");
+        /// for(num=1;num<=10;num++){
+        //gfgh
+        //System.out.println(num);
+        //if(num==6){
+        // continue;
+        //}
         //}
 //        Scanner scanner = new Scanner(System.in);
 //        int num = scanner.nextInt();
@@ -107,7 +104,6 @@ public class DemoSession1 {
 //           }while(keyChoice!=4);
 //           
 //           System.out.println("ABC");
-
 //       int mang[] = new int[4];
 //       mang[0]=0;
 //       mang[1]=1;
@@ -150,7 +146,6 @@ public class DemoSession1 {
 //              System.out.println(mangHaiChieu[i][j]);
 //          }
 //       }
-
 //         String fullName = "Nguyen Thanh Luan";
 //         System.out.println(fullName.charAt(0));
 //         System.out.println(fullName.indexOf("N"));
@@ -159,11 +154,9 @@ public class DemoSession1 {
 //         System.out.println(fullName.concat(" Ha Long"));
 //         System.out.println(fullName.startsWith("N"));
 //         System.out.println(fullName.endsWith("n"));
-
 //           StringBuilder stringBuilder = new StringBuilder("NIIT HA NOI");
 //           stringBuilder.reverse().append("abc");
 //           System.out.println(stringBuilder.toString());
-
 //            Scanner scanner = new Scanner(System.in);
 //            System.out.println("Nhap vao so pt cua mang");
 //            int lengthArray = scanner.nextInt();
@@ -204,22 +197,68 @@ public class DemoSession1 {
 //            }
 //            
 //            System.out.println("Trung binh cong cac so chia het cho 5 la "+(sum/count));
-
 //Sắp xếp tăng dần
-        int mang[] = {0,1,5,3,2,4,5,6,8,10};
-        for(int i = 0; i < mang.length-1;i++){
-           for(int j =1; j<mang.length; j++){
-               if(mang[i] < mang[j]){
-                  int temp = mang[i];
-                  mang[i]=mang[j];
-                  mang[j]=temp;
-               }
-           }
+//        int mang[] = {0,1,5,3,2,4,5,6,8,10};
+//        for(int i = 0; i < mang.length-1;i++){
+//           for(int j =1; j<mang.length; j++){
+//               if(mang[i] < mang[j]){
+//                  int temp = mang[i];
+//                  mang[i]=mang[j];
+//                  mang[j]=temp;
+//               }
+//           }
+//        }
+//        
+//        System.out.println("Mang sau khi săp xep");
+//        for(int i = 0; i < mang.length-1;i++){
+//            System.out.println(mang[i]);
+//        }
+//        Pupils svA = new Pupils();
+//        svA.setId("001");
+//        svA.setName("Nguyen Van A");
+//        svA.setClassName("K46");
+//        svA.setAddress("Ha Noi");
+//        
+//        System.out.println("Thong tin cua sv co ma "+svA.getId());
+//        System.out.println("Ho ten "+svA.getName());
+//        System.out.println("Dia chi "+svA.getAddress());
+//        System.out.println("Lop "+svA.getClassName());
+//        
+//    
+//        Pupils svB = new Pupils("002", "Nguyen Van B");
+//
+//        Person personA = new Person();
+//        personA.inputDetails("Nguyen Van A","Ha Noi" ,28);
+//        personA.displayDetails();
+//        
+//        Person personB = new Person();
+//        personB.inputDetails("Nguyen Van B", "Quang Ninh", 27);
+//        personB.displayDetails();
+//          Car car = new Car(50000, "Đo", "SUV");
+//          car.displayDetails();
+        NhanVien nvs[] = new NhanVien[3];
+        for (int i = 0; i < 3; i++) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Nhap vao ma ");
+            int ma = scanner.nextInt();
+            System.out.println("Nhap vao hoten");
+            scanner = new Scanner(System.in);
+            String hoten = scanner.nextLine();
+            System.out.println("Nhap vao luong");
+            scanner = new Scanner(System.in);
+            float luong = scanner.nextFloat();
+            NhanVien nv = new NhanVien(ma, hoten, luong);
+            nvs[i] = nv;
         }
-        
-        System.out.println("Mang sau khi săp xep");
-        for(int i = 0; i < mang.length-1;i++){
-            System.out.println(mang[i]);
+
+        for (int i = 0; i < 3; i++) {
+
+            System.out.println("Nhan vien thu " + (i + 1));
+            System.out.println("Ma " + nvs[i].getMa());
+            System.out.println("Hoten " + nvs[i].getHoten());
+            System.out.println("Luong " + nvs[i].getLuong());
+
         }
+
     }
 }
