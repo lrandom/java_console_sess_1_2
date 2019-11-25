@@ -5,6 +5,7 @@
  */
 package demosession1;
 
+import bai1.Bike;
 import java.util.Scanner;
 import static javafx.application.Platform.exit;
 
@@ -236,29 +237,31 @@ public class DemoSession1 {
 //        personB.displayDetails();
 //          Car car = new Car(50000, "Đo", "SUV");
 //          car.displayDetails();
-        NhanVien nvs[] = new NhanVien[3];
-        for (int i = 0; i < 3; i++) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Nhap vao ma ");
-            int ma = scanner.nextInt();
-            System.out.println("Nhap vao hoten");
-            scanner = new Scanner(System.in);
-            String hoten = scanner.nextLine();
-            System.out.println("Nhap vao luong");
-            scanner = new Scanner(System.in);
-            float luong = scanner.nextFloat();
-            NhanVien nv = new NhanVien(ma, hoten, luong);
-            nvs[i] = nv;
-        }
-
-        for (int i = 0; i < 3; i++) {
-
-            System.out.println("Nhan vien thu " + (i + 1));
-            System.out.println("Ma " + nvs[i].getMa());
-            System.out.println("Hoten " + nvs[i].getHoten());
-            System.out.println("Luong " + nvs[i].getLuong());
-
-        }
-
+//        NhanVien nvs[] = new NhanVien[3];
+//        for (int i = 0; i < 3; i++) {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Nhap vao ma ");
+//            int ma = scanner.nextInt();
+//            System.out.println("Nhap vao hoten");
+//            scanner = new Scanner(System.in);
+//            String hoten = scanner.nextLine();
+//            System.out.println("Nhap vao luong");
+//            scanner = new Scanner(System.in);
+//            float luong = scanner.nextFloat();
+//            NhanVien nv = new NhanVien(ma, hoten, luong);
+//            nvs[i] = nv;
+//        }
+//
+//        for (int i = 0; i < 3; i++) {
+//
+//            System.out.println("Nhan vien thu " + (i + 1));
+//            System.out.println("Ma " + nvs[i].getMa());
+//            System.out.println("Hoten " + nvs[i].getHoten());
+//            System.out.println("Luong " + nvs[i].getLuong());
+//
+//        }
+          Bike bike = new Bike();
+          bike.printDetails();
+          bike.accelerate();
     }
 }
