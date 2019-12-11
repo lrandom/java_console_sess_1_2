@@ -6,6 +6,21 @@
 package demosession1;
 
 import bai1.Bike;
+import bai1.Vehicle;
+import demosession6.Children;
+import demosession6.Parent;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import static javafx.application.Platform.exit;
 
@@ -260,8 +275,157 @@ public class DemoSession1 {
 //            System.out.println("Luong " + nvs[i].getLuong());
 //
 //        }
-          Bike bike = new Bike();
-          bike.printDetails();
-          bike.accelerate();
+//          Bike bike = new Bike();
+//          bike.printDetails();
+//          bike.accelerate();
+//           Parent parent=new Parent();
+//           parent.hihi(new Parent.Children4() {
+//               @Override
+//               public void sayHi() {
+//                  System.out.print("KAKA");
+//               }
+//           });
+//            parent.run();
+//            parent.run(10);
+//            parent.run(5);
+//            parent.run(10, 10);
+//Children children = new Children();
+//children.run();
+//       int num1 = 10;
+       int num3=0;
+//       try {
+//            int num2 = num1/5; 
+//       } catch (Exception e) {
+//            System.out.println("Loi "+e.getMessage());
+//       }
+// 
+       
+      // System.out.println("ABCD");
+       
+//       System.out.println("Moi ban nhap so");
+//       Scanner scanner = new Scanner(System.in);
+//       
+//        try {
+//             num3 = scanner.nextInt();   
+//        } catch (InputMismatchException e) {
+//            System.out.println("Moi ban nhap lai, ban nhap so khong dung dinh dang");
+//            scanner = new Scanner(System.in);
+//            num3 = scanner.nextInt();
+//        }
+//        catch(IndexOutOfBoundsException e){
+//    
+//        }
+//        catch(Exception e){
+//        
+//        }
+//        finally{
+//            System.out.println("Finally");
+//        }
+//        
+//       System.out.println(num3);
+         
+        /*try {
+            FileInputStream fis = new FileInputStream("data.txt");
+            int data;
+            BufferedInputStream buf = new BufferedInputStream(fis);
+            while((data=buf.read())!=-1){
+                System.out.println((char)data);
+            }
+            buf.close();
+            fis.close();
+        } catch (Exception e) {
+            System.out.println("Khong tim thay tap tin");
+        }*/
+        
+        /*try {
+            FileReader fes = new FileReader("data.txt");
+            int data;
+            String dataLine;
+          
+            System.out.println("Đọc bằng Reader");
+            while((data=fes.read())!=-1){
+                System.out.println((char)data);
+            }
+            fes.close();
+           
+           
+            fes = new FileReader("data.txt");
+            BufferedReader buf = new BufferedReader(fes);
+            System.out.println("Đọc bằng BufferReader");
+            while((dataLine=buf.readLine())!=null){
+                System.out.println(dataLine);
+            }
+            buf.close();
+            fes.close();
+        } catch (Exception e) {
+            System.out.println("Khong tim thay tap tin, hoac tap tin loi");
+            System.out.println(e.getMessage());
+        }*/
+        
+        /*try {
+            FileOutputStream fos = new FileOutputStream("data.txt");
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            
+            
+            String data = "Hello World 2";
+            //fos.write(data.getBytes());
+            bos.write(data.getBytes());
+            bos.flush();
+            bos.close();
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+        
+        /*try {
+            FileWriter few = new FileWriter("data.txt");
+            BufferedWriter buf = new BufferedWriter(few);
+            buf.newLine();
+            buf.write("Hello World");
+            //few.write("abcd hgef");
+            buf.flush();
+            buf.close();
+            few.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+        
+       /* File file = new File("data.txt");
+        if(file.exists() && file.isFile()){
+           //doc o day
+            System.out.println("File ton tai");
+        }
+        
+        try {
+            File file2 = new File("/Users/mac/Desktop/demomakefolder");
+            file2.listFiles();
+            if(!file2.exists()){
+                file2.mkdir();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        */
+        
+        try {
+            FileOutputStream fos = new FileOutputStream("data.dat");
+            ObjectOutputStream obj = new ObjectOutputStream(fos);
+            Vehicle vec = new Vehicle();
+            vec.price=10000;
+            obj.writeObject(vec);
+
+            
+            FileInputStream fis = new FileInputStream("data.dat");
+            ObjectInputStream obj1 = new ObjectInputStream(fis);
+            Vehicle vec1 = (Vehicle)obj1.readObject();
+            System.out.println(vec1.price);
+            
+            obj.close();
+            obj1.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+ 
     }
 }

@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai1;
-
-import java.io.Serializable;
+package session7;
 
 /**
  *
  * @author Lrandom
  */
-public class Vehicle implements Serializable{
-    public float price;
-    String color;
+public class Demo {
+    public static void main(String[] args) {
+        int a =10;
+        int c = a/10;
+    }
     
-     void accelerate(){
-        System.out.println("Tang toc len ko biet");
-    };
+  
 }
