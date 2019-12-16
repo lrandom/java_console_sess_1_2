@@ -7,6 +7,9 @@ package demosession1;
 
 import bai1.Bike;
 import bai1.Vehicle;
+import bai8.FileHelper;
+import bai9.DemoGeneric1;
+import demosession5.Student;
 import demosession6.Children;
 import demosession6.Parent;
 import java.io.BufferedInputStream;
@@ -20,8 +23,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.InputMismatchException;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import static javafx.application.Platform.exit;
 
 /**
@@ -407,25 +416,79 @@ public class DemoSession1 {
         }
         */
         
-        try {
-            FileOutputStream fos = new FileOutputStream("data.dat");
-            ObjectOutputStream obj = new ObjectOutputStream(fos);
-            Vehicle vec = new Vehicle();
-            vec.price=10000;
-            obj.writeObject(vec);
-
-            
-            FileInputStream fis = new FileInputStream("data.dat");
-            ObjectInputStream obj1 = new ObjectInputStream(fis);
-            Vehicle vec1 = (Vehicle)obj1.readObject();
-            System.out.println(vec1.price);
-            
-            obj.close();
-            obj1.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
+//        try {
+//            FileOutputStream fos = new FileOutputStream("data.dat");
+//            ObjectOutputStream obj = new ObjectOutputStream(fos);
+//            Vehicle vec = new Vehicle();
+//            vec.price=10000;
+//            obj.writeObject(vec);
+//
+//            
+//            FileInputStream fis = new FileInputStream("data.dat");
+//            ObjectInputStream obj1 = new ObjectInputStream(fis);
+//            Vehicle vec1 = (Vehicle)obj1.readObject();
+//            System.out.println(vec1.price);
+//            
+//            obj.close();
+//            obj1.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    
+       // FileHelper.copyFile();
  
+        DemoGeneric1<demosession1.Person> demoGeneric = new DemoGeneric1();
+        String[] strings = {
+           "A","B","C","D"
+        };
+//        System.out.println(demoGeneric.display(strings));
+//        
+//        DemoGeneric1<Double> demoGeneric1 = new DemoGeneric1<>();
+//        Integer[] integers = {
+//           1,2,3,4
+//        };
+//        System.out.println(demoGeneric1.display(integers));
+//        
+       /*
+         ArrayList<String> taphop = new ArrayList<>();
+         taphop.add("A");
+         taphop.add("B");
+         taphop.add("C");
+         
+         for (int i = 0; i < taphop.size(); i++) {
+             System.out.println(taphop.get(i));   
+         }
+         
+         taphop.add(0, "D");
+         
+         for (String string : taphop) {
+             System.out.println(string);
+         }
+         
+         taphop.remove(0);*/
+         
+         /*HashSet<String> taphop1 = new HashSet<>();
+         taphop1.add("A");
+         taphop1.add("A");
+         for (String string : taphop1) {
+             System.out.println(string);
+         }*/
+         
+         HashMap<String,Integer> taphop2 = new HashMap<>();
+         taphop2.put("Nguyen Thanh Luan", 891721892);
+         taphop2.put("Nguyen Nam", 891721892);
+         //taphop2.get("Nguyen Thanh Luan");
+         
+         Set<Map.Entry<String,Integer>> entrySet= taphop2.entrySet();
+         for (Iterator iterator = entrySet.iterator(); iterator.hasNext();) {
+            Object next = iterator.next();
+            System.out.println(next);
+         }
+         
+        for (Map.Entry<String, Integer> entry : taphop2.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(value);
+        }
     }
 }

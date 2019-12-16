@@ -9,21 +9,21 @@ package demosession5;
  *
  * @author Lrandom
  */
-public class Student extends Human{
+public class Student extends Person{
 
-    @Override
-    public String getName() {
-      return "Luan";
-    }
-
-    @Override
-    public String getNameA() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getNameB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    @Override
+//    public String getName() {
+//      return "Luan";
+//    }
+//
+//    @Override
+//    public String getNameA() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    @Override
+//    public String getNameB() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
   
 }
