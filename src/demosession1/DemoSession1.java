@@ -32,6 +32,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import static javafx.application.Platform.exit;
+import session10.DemoThread;
+import session10.DemoThread2;
+import session10.DemoThread3;
 
 /**
  *
@@ -58,7 +61,7 @@ public class DemoSession1 {
 //        return -1;
 //    }
 //    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
 //        int num = 1;
 //        int totalNumber;
@@ -437,10 +440,10 @@ public class DemoSession1 {
 //    
        // FileHelper.copyFile();
  
-        DemoGeneric1<demosession1.Person> demoGeneric = new DemoGeneric1();
-        String[] strings = {
-           "A","B","C","D"
-        };
+//        DemoGeneric1<demosession1.Person> demoGeneric = new DemoGeneric1();
+//        String[] strings = {
+//           "A","B","C","D"
+//        };
 //        System.out.println(demoGeneric.display(strings));
 //        
 //        DemoGeneric1<Double> demoGeneric1 = new DemoGeneric1<>();
@@ -473,22 +476,50 @@ public class DemoSession1 {
          for (String string : taphop1) {
              System.out.println(string);
          }*/
-         
-         HashMap<String,Integer> taphop2 = new HashMap<>();
-         taphop2.put("Nguyen Thanh Luan", 891721892);
-         taphop2.put("Nguyen Nam", 891721892);
-         //taphop2.get("Nguyen Thanh Luan");
-         
-         Set<Map.Entry<String,Integer>> entrySet= taphop2.entrySet();
-         for (Iterator iterator = entrySet.iterator(); iterator.hasNext();) {
-            Object next = iterator.next();
-            System.out.println(next);
-         }
-         
-        for (Map.Entry<String, Integer> entry : taphop2.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-            System.out.println(value);
-        }
+//         
+//         HashMap<String,Integer> taphop2 = new HashMap<>();
+//         taphop2.put("Nguyen Thanh Luan", 891721892);
+//         taphop2.put("Nguyen Nam", 891721892);
+//         //taphop2.get("Nguyen Thanh Luan");
+//         
+//         Set<Map.Entry<String,Integer>> entrySet= taphop2.entrySet();
+//         for (Iterator iterator = entrySet.iterator(); iterator.hasNext();) {
+//            Object next = iterator.next();
+//            System.out.println(next);
+//         }
+//         
+//        for (Map.Entry<String, Integer> entry : taphop2.entrySet()) {
+//            String key = entry.getKey();
+//            Integer value = entry.getValue();
+//            System.out.println(value);
+//        }
+           // DemoThread t1 = new DemoThread("Luong 1");
+           // DemoThread t2 = new DemoThread("Luong 2");
+           // t1.setPriority(1);
+           // t2.setPriority(10);
+            //t1.start();
+            //t1.join(5000);
+           // t2.start();
+            
+           /* Thread t3 = new Thread(new DemoThread2());
+            t3.start();*/
+            
+           DemoThread3 obj = new DemoThread3();
+           Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+               obj.printData();
+            }
+           });
+           
+           Thread t2 = new Thread(new Runnable(){
+              @Override
+              public void run() {
+               obj.printData2();
+              } 
+           });
+           
+           t1.start();
+           t2.start();
     }
 }
